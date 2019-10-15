@@ -14,6 +14,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+	.get('/modification', (req, res) => res.render('pages/modification'))
 	.get('/mainpage', async (req, res) => {
 		const client = await pool.connect()
 		const tokiresult = await client.query('SELECT name FROM Tokimon');
