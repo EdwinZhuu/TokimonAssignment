@@ -19,7 +19,14 @@
       with each other on occasion. Each Tokimon could have the ability to fly, fight, throw fire, spray
       water, electrify, and freeze other Tokimons. Because they are such primitive creatures but have such extraordinary abilities, they
       need Tokimon trainers. The trainer’s is job to collect Tokimons and use them accordingly </p>
-    </div>
-
+  </div>
+  <div class = "alltokimon">
+    <ul>
+      <% tokiresults.forEach((r) => { %>
+        <li><a href = <%- r.name %>><%= r.name %></a>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
   </body>
 </html>
