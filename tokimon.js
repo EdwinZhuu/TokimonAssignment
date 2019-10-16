@@ -16,7 +16,6 @@ async function changetokimon(tokimon, tokimon_id ,client){
   }
   querystring = querystring.substring(0,(querystring.length-1))
   querystring = querystring + ' WHERE name = ' + `'` + tokimon_id + `'` + ';'
-  console.log(querystring)
   return client.query(querystring, (err,res) => {
     if (err) {
       console.log(err)

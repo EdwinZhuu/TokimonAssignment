@@ -2,21 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="/modification.js"></script>
     <title>USERS</title>
   </head>
   <body>
-    <ul>
-      <li><%= results[0].name %></li>
-      <li><%= results[0].height %></li>
-      <li><%= results[0].weight %></li>
-      <li><%= results[0].fly %></li>
-      <li><%= results[0].fight %></li>
-      <li><%= results[0].fire %></li>
-      <li><%= results[0].water %></li>
-      <li><%= results[0].electric %></li>
-      <li><%= results[0].frozen %></li>
-      <li><%= results[0].total %></li>
-      <li><%= results[0].trainer_name %></li>
-    </ul>
+    <form>
+      Name: <input class="name" type="text" name="name" value = <%= results[0].name %>><br>
+      Height: <input type="number" name="height" value = <%= results[0].height %>><br>
+      Weight: <input type="number" name="weight" value = <%= results[0].weight %>><br>
+      Fly: <input class="attribute" type="number" name="fly" oninput="calculatetotal(this)" value= <%= results[0].fly %>><br>
+      Fight: <input class="attribute" type="number" name="fight" oninput="calculatetotal(this)" value=<%= results[0].fight %>><br>
+      Fire: <input class="attribute" type="number" name="fire" oninput="calculatetotal(this)" value=<%= results[0].fire %>><br>
+      Water: <input class="attribute" type="number" name="water" oninput="calculatetotalmod(this)" value=<%= results[0].water %>><br>
+      Electric: <input class="attribute" type="number" name="electric" oninput="calculatetotalmod(this)" value= <%= results[0].electric %>><br>
+      Frozen: <input class="attribute" type="number" name="frozen" oninput="calculatetotal(this)" value=<%= results[0].frozen %>><br>
+      Total: <input type="number" name="total" readonly value=<%= results[0].total %>><br>
+      Trainer Name: <input type="text" name="trainer_name" value = <%= results[0].trainer_name %>><br>
+    </form>
+    <button type="button" onclick= <%- 'deletetokimon(' + '\"' + results[0].name + '\"' + ')'%>>DELETE</button>
+    <button type="button" onclick= <%- 'changetokimon(' + '\"' + results[0].name + '\"' + ')'%>>CHANGE</button>
+    <button type="button"><a href="/Mainpage">Return</a></button>
   </body>
 </html>

@@ -7,8 +7,13 @@
     <link rel = "stylesheet" href = 'modification.css'>
   </head>
   <body>
+    <div class = "sidebar">
+      <ul>
+        <li><a href = 'mainpage'>Home</a></li>
+      </ul>
+    </div>
     <form>
-      Name: <input type="text" name="name"><br>
+      Name: <input class="name" type="text" name="name"><br>
       Height: <input type="number" name="height"><br>
       Weight: <input type="number" name="weight"><br>
       Fly: <input class="attribute" type="number" name="fly" value="0" oninput="calculatetotal(this)"><br>
@@ -19,6 +24,6 @@
       Frozen: <input class="attribute" type="number" name="frozen" value="0" oninput="calculatetotal(this)"><br>
       Total: <input type="number" name="total" value="0" readonly><br>
       Trainer Name: <input type="text" name="trainer_name"><br>
-      <button type="button" onclick="add()">ADD</button>
     </form>
+      <button type="button" onclick="add()">ADD</button>
 </html>
